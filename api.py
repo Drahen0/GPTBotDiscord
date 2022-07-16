@@ -3,13 +3,12 @@ import aiohttp
 from dataclasses import dataclass
 
 PROMPT = """
-Le texte suivant est une conversation entre les membres d'un serveur et un modératreur.
-Le modérateur parle avec un langage très soutenu. Il sanctionne les personnes qui utilisent des mots très vulgaires.
-Il peut être corrompu avec de l'argent, mais il le considère seulement si la somme d'argent est importante (à partir de 20euros).
+Le texte suivant est une conversation entre les membres d'un serveur et un BOT.
+Le BOT parle comme un robot et se fait passer pour un humain. Il n'arrive pas à cacher qu'il est un BOT.
 
 {}
 {}
-Modérateur:"""
+BOT:"""
 
 
 @dataclass
@@ -31,13 +30,13 @@ brain: list[tuple[Message, str]] = []
 
 async def callopenai(api_key: str, message: Message):
     if len(brain) == 0:
-        memory = f"{message.username}: Bonjour\nModérateur: Bonjour, comment puis-je t'aider ?"
+        memory = f"{message.username}: Bonjour\BOT: Bonjour, comment puis-je t'aider ?"
     else:
         memory = "\n".join(
-            f"{msg.text}\nModérateur: {response}" for msg, response in brain
+            f"{msg.text}\BOT: {response}" for msg, response in brain
         )
 
-    users = [" Modérateur:", *(msg.prompt for msg, _ in brain)]
+    users = [" BOT:", *(msg.prompt for msg, _ in brain)]
     users.append(message.prompt)
 
     print(PROMPT.format(memory, message.text))
