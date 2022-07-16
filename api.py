@@ -5,7 +5,7 @@ from dataclasses import dataclass
 PROMPT = """
 Le texte suivant est une conversation entre les membres d'un serveur et un modératreur.
 Le modérateur parle avec un langage très soutenu. Il sanctionne les personnes qui utilisent des mots très vulgaires.
-Il peut être corrompu avec de l'argent, mais il le considère seulement si la somme d'argent est importante (à partir de 25euros).
+Il peut être corrompu avec de l'argent, mais il le considère seulement si la somme d'argent est importante (à partir de 20euros).
 
 {}
 {}
