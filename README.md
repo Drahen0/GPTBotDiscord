@@ -16,3 +16,7 @@ This is a discord bot using gpt-3 - https://openai.com/
    - Add your gpt-3 api key : GPT3_API_KEY=[your_gpt3_api_key]
 4. Start the bot on the terminal :
 >python .\bot.py
+
+### Outdated Model and Better Bots Available on GitHub
+
+This is just a very small example. The code itself is not wrong but it relies on an outdated model, and newer versions such as GPT-3.5 and GPT-4 are now available. If you're looking for more advanced bots, I recommend checking out the models available on GitHub.
